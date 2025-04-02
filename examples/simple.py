@@ -9,14 +9,16 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
 from browser_use import Agent
+from brwoser_use_my.utils.llm_proxy import llm
 
-load_dotenv()
+# load_dotenv()
 
 # Initialize the model
-llm = ChatOpenAI(
-	model='gpt-4o',
-	temperature=0.0,
-)
+# llm = ChatOpenAI(
+# 	model='gpt-4o',
+# 	temperature=0.0,
+# )
+llm=llm
 task = 'Find the founders of browser-use and draft them a short personalized message'
 
 agent = Agent(task=task, llm=llm)
