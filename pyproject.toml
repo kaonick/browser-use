@@ -6,7 +6,8 @@ version = "0.1.40"
 readme = "README.md"
 include = [
     { path = "browser_use", format = ["sdist", "wheel"] },
-    { path = "browser_use_my", format = ["sdist", "wheel"] }
+    { path = "browser_use_my", format = ["sdist", "wheel"] },
+    { path = "pycdp", format = ["sdist", "wheel"] }
 ]
 requires-python = ">=3.11,<4.0"
 classifiers = [
@@ -39,6 +40,8 @@ dependencies = [
     "faiss-cpu>=1.10.0",
     "mem0ai==0.1.81",
     "litellm>=1.65.1",
+    "deprecated>=1.2.18",
+    "websocket-client>=1.8.0",
 ]
 
 # botocore: only needed for Bedrock Claude boto3 examples/models/bedrock_claude.py 
