@@ -7,8 +7,9 @@ async def open_page():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
         context = await browser.new_context()
-        url="https://www.mouser.tw/c/?q=ZX-LD100"
-        # url="https://scrapingant.com/"
+        # url="https://www.mouser.tw/c/?q=ZX-LD100"
+        # url = 'https://example.com/'
+        url="https://scrapingant.com/"
         page = await context.new_page()
         await page.goto(url)
         print(await page.title())
