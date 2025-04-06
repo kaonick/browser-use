@@ -7,8 +7,9 @@ from langchain_openai import ChatOpenAI
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from browser_use import Agent, Browser, BrowserConfig, BrowserContextConfig
-
-llm = ChatOpenAI(model='gpt-4o')
+from brwoser_use_my.utils.llm_proxy import llm
+# llm = ChatOpenAI(model='gpt-4o')
+llm = llm
 browser = Browser(
 	config=BrowserConfig(
 		headless=False,

@@ -1,16 +1,12 @@
 import websocket
-from pydantic.v1 import BaseModel
 
-from brwoser_use_my.tmp.tools import run_command
+from brwoser_use_my.cdp.cdp_tools import run_command
 
 
 class Page():
     """
     Page class to represent a web page.
     """
-
-
-
 
     def __init__(self, ws:websocket.WebSocket,url: str):
         self.url = url
