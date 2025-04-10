@@ -60,7 +60,7 @@ async def test_ecommerce_interaction(llm, context):
 		task="Go to amazon.com, search for 'laptop', filter by 4+ stars, and find the price of the first result",
 		llm=llm,
 		browser_context=context,
-		save_conversation_path='tmp/test_ecommerce_interaction/conversation',
+		save_conversation_path='tmp_ext/test_ecommerce_interaction/conversation',
 	)
 
 	history: AgentHistoryList = await agent.run(max_steps=20)

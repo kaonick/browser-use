@@ -41,7 +41,7 @@ CHROME_DOCKER_ARGS = [
 	'--no-sandbox',  # rely on docker sandboxing in docker, otherwise we need cap_add: SYS_ADM to use host sandboxing
 	'--disable-gpu-sandbox',
 	'--disable-setuid-sandbox',
-	'--disable-dev-shm-usage',  # docker 75mb default shm size is not big enough, disabling just uses /tmp instead
+	'--disable-dev-shm-usage',  # docker 75mb default shm size is not big enough, disabling just uses /tmp_ext instead
 	'--no-xshm',
 	# dont try to disable (or install) dbus in docker, its not needed, chrome can work without dbus despite the errors
 ]

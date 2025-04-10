@@ -36,7 +36,7 @@ browser = Browser(
 				'width': 1280,
 				'height': 1100,
 			},
-			# trace_path='./tmp/web_voyager_agent',
+			# trace_path='./tmp_ext/web_voyager_agent',
 		),
 	)
 )
@@ -65,7 +65,7 @@ async def main():
 		validate_output=True,
 	)
 	history = await agent.run(max_steps=50)
-	history.save_to_file('./tmp/history.json')
+	history.save_to_file('./tmp_ext/history.json')
 
 
 if __name__ == '__main__':

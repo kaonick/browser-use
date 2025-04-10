@@ -76,7 +76,7 @@ async def test_token_limit_with_multiple_extractions(llm, controller, context):
 		controller=controller,
 		browser_context=context,
 		max_input_tokens=2000,
-		save_conversation_path='tmp/stress_test/test_token_limit_with_multiple_extractions.json',
+		save_conversation_path='tmp_ext/stress_test/test_token_limit_with_multiple_extractions.json',
 	)
 
 	history = await agent.run(max_steps=5)
@@ -99,7 +99,7 @@ async def test_open_3_tabs_and_extract_content(llm, controller, context, max_tok
 		controller=controller,
 		browser_context=context,
 		max_input_tokens=max_tokens,
-		save_conversation_path='tmp/stress_test/test_open_3_tabs_and_extract_content.json',
+		save_conversation_path='tmp_ext/stress_test/test_open_3_tabs_and_extract_content.json',
 	)
 	start_time = time.time()
 	history = await agent.run(max_steps=7)

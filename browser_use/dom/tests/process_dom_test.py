@@ -27,8 +27,8 @@ async def test_process_dom():
 		# print(dom_tree)
 		print(f'Time: {end - start:.2f}s')
 
-		os.makedirs('./tmp', exist_ok=True)
-		with open('./tmp/dom.json', 'w') as f:
+		os.makedirs('./tmp_ext', exist_ok=True)
+		with open('./tmp_ext/dom.json', 'w') as f:
 			json.dump(dom_tree, f, indent=1)
 
 		# both of these work for immobilienscout24.de

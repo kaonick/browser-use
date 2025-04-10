@@ -50,7 +50,7 @@ async def test_highlight_elements():
 				# await asyncio.sleep(10)
 				state = await context.get_state()
 
-				with open('./tmp/page.json', 'w') as f:
+				with open('./tmp_ext/page.json', 'w') as f:
 					json.dump(
 						ElementTreeSerializer.dom_element_node_to_json(state.element_tree),
 						f,

@@ -24,7 +24,7 @@ browser = Browser(
 async def main():
 	async with await browser.new_context(
 		config=BrowserContextConfig(
-			trace_path='./tmp/result_processing',
+			trace_path='./tmp_ext/result_processing',
 			no_viewport=False,
 			browser_window_size={'width': 1280, 'height': 1000},
 		)
