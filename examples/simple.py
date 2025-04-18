@@ -21,7 +21,7 @@ from brwoser_use_my.utils.llm_proxy import llm
 llm=llm
 task = 'Find the founders of browser-use and draft them a short personalized message'
 
-agent = Agent(task=task, llm=llm)
+agent = Agent(task=task, llm=llm,save_conversation_path="d:/temp3/test",generate_gif=True)
 
 
 async def main():

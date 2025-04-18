@@ -32,6 +32,7 @@ def run_command(ws, method, **kwargs):
     ws.send(json.dumps(command))
     while True:
         msg = json.loads(ws.recv())
+        print(msg)
         if msg.get('id') == request_id:
             break
     return msg
@@ -56,6 +57,8 @@ def open_page(ws, url="about:blank"):
     result = run_command(ws, 'Page.enable')
     result = run_command(ws, 'Runtime.enable')
     result = run_command(ws, 'Page.navigate',url=url)
+    target_id= result["result"]["frameId"]
+    return target_id
 
 def get_dom(ws):
     # Step 5: Retrieve the document root node
@@ -124,6 +127,23 @@ def get_node_attr(ws, node_id:int,attr:str="innerText"):
         print(f"attribute Content: {value}")
         return value
     raise "attribute not found"
+
+
+def get_targets(ws):
+    result = run_command(ws, 'Target.getTargets')
+    if result["result"]["targetInfos"]:
+        target_id=result["result"]["targetInfos"][0]["targetId"]
+    else:
+        raise "target not found"
+    return target_id
+
+def set_tab(ws, target_id:str):
+    result = run_command(ws, 'Target.attachToTarget', targetId=target_id, flatten=True)
+    if result["result"]["sessionId"]:
+        session_id=result["result"]["sessionId"]
+    else:
+        raise "session not found"
+    return session_id
 
 
 
